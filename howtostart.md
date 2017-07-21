@@ -26,9 +26,12 @@
 
 ## Task
 * 振る舞いを決める
-* Object設計 (モデル / Value Object)
+* Object設計 (Domain Object/Value Object)
 * 環境構築
 * SPA環境でHello World
 * テスト作成
 * 重要な箇所のサービス作成
 * 後は機能追加フェーズ
+
+## コアドメイン
+## サブドメイン
