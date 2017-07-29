@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\MemoService;
+use App\Services\MemoServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // メモサービス (ここの必要性と、なぜsingleton が理解出来ていない)
+        $this->app->singleton(MemoServiceInterface::class, MemoService::class);
     }
 }
