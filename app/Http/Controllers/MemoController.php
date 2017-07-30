@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\MemoService;
+use App\Services\MemoServiceInterface;
 use Illuminate\Http\Request;
 
 class MemoController extends Controller
@@ -17,7 +18,7 @@ class MemoController extends Controller
     public function index()
     {
         $list = $this->memoService->getList();
-        return view('memo.list', compact($list));
+        return view('memo.list', compact('list'));
     }
 
 

@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use app\Repositories\MemoRepository;
+use App\Repositories\MemoRepository;
+use App\Repositories\MemoInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryProvider extends ServiceProvider
@@ -25,6 +26,6 @@ class RepositoryProvider extends ServiceProvider
     public function register()
     {
         // MemoInterface と MemoRepository をつなげる
-        $this->app->bind(\MemoInterface::class, MemoRepository::class);
+        $this->app->bind(MemoInterface::class, MemoRepository::class);
     }
 }

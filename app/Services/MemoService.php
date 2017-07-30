@@ -2,8 +2,7 @@
 
 namespace App\Services;
 
-use App\Services\MemoServiceinterface;
-use App\Repositories\Memointerface;
+use App\Repositories\MemoInterface;
 use Illuminate\Validation\Factory as ValidateFactory;
 
 /**

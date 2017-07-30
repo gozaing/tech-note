@@ -1,15 +1,14 @@
 <?php
 
-namespace app\Repositories;
+namespace App\Repositories;
 
-use app\Repositories\MemoInterface;
-use app\Memo;
+use App\Memo;
 
 /**
  * Class MemoRepository
  * @package app\Repositories
  */
-class MemoRepository implements Memointerface
+class MemoRepository implements MemoInterface
 {
     protected $memo;
 
@@ -18,9 +17,29 @@ class MemoRepository implements Memointerface
         $this->memo = $memo;
     }
 
-    public function get()
+    public function get($id)
     {
-        //
+        return 'get';
+    }
+
+    public function getList()
+    {
+        return 'getList';
+    }
+
+    public function create($data)
+    {
+        return 'create';
+    }
+
+    public function update($id, $data)
+    {
+        return 'update';
+    }
+
+    public function destroy($id)
+    {
+        return 'destroy';
     }
 
 }

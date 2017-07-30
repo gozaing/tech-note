@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Services;
+
 interface MemoServiceInterface
 {
     public function get($id);
