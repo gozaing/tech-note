@@ -19,7 +19,7 @@ class MemoRepository implements MemoInterface
 
     public function get($id)
     {
-        return 'get';
+        return $this->memo->find($id);
     }
 
     public function getList()
