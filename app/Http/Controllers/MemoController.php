@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\MemoService;
 use App\Services\MemoServiceInterface;
 use Illuminate\Http\Request;
 
