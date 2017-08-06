@@ -24,7 +24,8 @@ class MemoRepository implements MemoInterface
 
     public function getList()
     {
-        return 'getList';
+        return $this->memo->all();
+//        return 'getList';
     }
 
     public function create($data)
