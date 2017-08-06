@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // メモサービス (ここの必要性と、なぜsingleton が理解出来ていない)
+        // メモサービス
         // singleton を利用すると内容がcache される
         // cache が必要なければ bind でも良い
         $this->app->singleton(MemoServiceInterface::class, MemoService::class);
