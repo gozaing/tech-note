@@ -65,6 +65,7 @@
         </style>
     </head>
     <body>
+        <div>リスト画面</div>
         <div class="flex-center position-ref full-height">
             {{ var_dump($list) }}
         </div>

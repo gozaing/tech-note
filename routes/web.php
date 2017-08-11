@@ -19,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::resource('/memo', 'MemoController');
+
+// 存在しないsample を叩いた場合は301を返してmemoへ
+Route::get('/sample', function() {
+    return redirect('/memo', 301);
+});
