@@ -54,7 +54,12 @@
 
     <div id="sidenavi">
         <h2>sidenavi</h2>
-{{--        {{ var_dump($list) }}--}}
+        <ul>
+            @foreach($list as $a)
+            <li>{{ $a->title }}</li>
+            @endforeach
+        </ul>
+
     </div>
 
     <div id="contents">

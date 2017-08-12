@@ -24,8 +24,11 @@ class MemoRepository implements MemoInterface
 
     public function getList()
     {
-        return $this->memo->all();
-//        return 'getList';
+        return $this->memo->all(['title']);
+        // if use query builder
+        // return DB::table('memo')->select('title')->get();
+        // and need to add
+        // use Illuminate\Support\Facades\DB;
     }
 
     public function create($data)
