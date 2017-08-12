@@ -1,73 +1,71 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    {{--<link rel="stylesheet" href="./style.css">--}}
+    <title>2カラムレイアウト</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+        #wrap {
+            width:960px;
+            margin:0px auto;
+        }
 
-        <title>List</title>
+        header {
+            border:dashed 1px #999;
+        }
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        #sidenavi {
+            float:left;
+            width:198px;
+            height:498px;
+            border:dashed 1px #999;
+            margin:10px 10px 10px 0px;
+        }
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
+        #contents {
+            float:left;
+            width:748px;
+            height:498px;
+            border:dashed 1px #999;
+            margin:10px 0px 10px 0px;
+        }
 
-            .full-height {
-                height: 100vh;
-            }
+        footer {
+            clear:both;
+            border:dashed 1px #999;
+        }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+    </style>
+</head>
 
-            .position-ref {
-                position: relative;
-            }
+<body>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<div id="wrap">
 
-            .content {
-                text-align: center;
-            }
+    <header>
+        <h1>header</h1>
+    </header>
 
-            .title {
-                font-size: 84px;
-            }
+    <div id="sidenavi">
+        <h2>sidenavi</h2>
+{{--        {{ var_dump($list) }}--}}
+    </div>
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+    <div id="contents">
+        <h2>contents</h2>
+    </div>
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div>リスト画面</div>
-        <div class="flex-center position-ref full-height">
-            {{ var_dump($list) }}
-        </div>
-    </body>
+    <footer>
+        <h2>footer</h2>
+    </footer>
+
+</div>
+
+</body>
 </html>
