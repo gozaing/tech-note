@@ -4,9 +4,9 @@
     {!! Form::open(['url' => 'memo']) !!}
 
     {{ Form::label('title', null, ['class' => 'control-label']) }}
-    {{ Form::text('username') }}
-    {{ Form::label('body', null, ['class' => 'control-label']) }}
-    {{ Form::textarea('email', 'example@gmail.com') }}
+    {{ Form::text('title', 'default title') }}
+    {{ Form::label('memo', null, ['class' => 'control-label']) }}
+    {{ Form::textarea('memo', 'memo 入力欄') }}
     {{ Form::submit('Click Me!') }}
 
     {!! Form::close() !!}

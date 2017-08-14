@@ -33,7 +33,9 @@ class MemoRepository implements MemoInterface
 
     public function create($data)
     {
-        return 'create';
+        $this->memo->title = $data['title'];
+        $this->memo->memo  = $data['memo'];
+        return $this->memo->save();
     }
 
     public function update($id, $data)

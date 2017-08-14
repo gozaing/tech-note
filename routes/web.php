@@ -18,7 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/memo', 'MemoController');
+Route::get('/memo', 'MemoController@index');
+Route::post('/memo', 'MemoController@regist');
 
 // 存在しないsample を叩いた場合は301を返してmemoへ
 Route::get('/sample', function() {

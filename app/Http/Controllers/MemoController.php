@@ -20,5 +20,11 @@ class MemoController extends Controller
         return view('memo.list', compact('list'));
     }
 
+    public function regist(Request $request)
+    {
+        $this->memoService->save($request);
+        $list = $this->memoService->getList();
+        return view('memo.list', compact('list'));
+    }
 
 }
