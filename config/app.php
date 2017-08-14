@@ -178,10 +178,18 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         /*
+         * IDE Helper
+         */
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
+        /*
          * Form Helper
          */
         Collective\Html\HtmlServiceProvider::class,
 
+        /*
+         * Original Service Provider
+         */
         App\Providers\RepositoryProvider::class,
 
 
