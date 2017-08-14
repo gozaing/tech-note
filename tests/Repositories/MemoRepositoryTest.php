@@ -4,9 +4,12 @@ namespace Tests\Repositories;
 
 use App\Repositories\MemoInterface;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class MemoRepositoryTest extends TestCase
 {
+    use DatabaseTransactions;
+
     protected $repo;
 
     public function setUp()
@@ -20,6 +23,14 @@ class MemoRepositoryTest extends TestCase
         $result = $this->repo->get(1);
         $this->assertSame($result->title, 'Vim');
         $this->assertSame($result->memo, 'Esc連打');
+    }
+
+    public function testCreate()
+    {
+        $data = array('title' => 'title', 'memo' => 'memo');
+        $result = $this->repo->create($data);
+
+        $this->assertSame($result, true);
     }
 
 }
