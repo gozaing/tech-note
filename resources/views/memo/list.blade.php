@@ -1,86 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-<head>
-    <meta charset="utf-8">
-    {{--<link rel="stylesheet" href="./style.css">--}}
-    <title>2カラムレイアウト</title>
-    <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <style>
-        #wrap {
-            width:960px;
-            margin:0px auto;
-        }
+@extends('base')
+@section('title', 'sample test')
+@section('content')
+    {!! Form::open(['url' => 'memo']) !!}
 
-        header {
-            border:dashed 1px #999;
-        }
+    {{ Form::label('title', null, ['class' => 'control-label']) }}
+    {{ Form::text('username') }}
+    {{ Form::label('body', null, ['class' => 'control-label']) }}
+    {{ Form::textarea('email', 'example@gmail.com') }}
+    {{ Form::submit('Click Me!') }}
 
-        #sidenavi {
-            float:left;
-            width:198px;
-            height:498px;
-            border:dashed 1px #999;
-            margin:10px 10px 10px 0px;
-        }
-
-        #contents {
-            float:left;
-            width:748px;
-            height:498px;
-            border:dashed 1px #999;
-            margin:10px 0px 10px 0px;
-        }
-
-        footer {
-            clear:both;
-            border:dashed 1px #999;
-        }
-
-        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-            display: block;
-        }
-    </style>
-</head>
-
-<body>
-
-<div id="wrap">
-
-    <header>
-        <h1>header</h1>
-    </header>
-
-    <div id="sidenavi">
-        <h2>sidenavi</h2>
-        <ul>
-            @foreach($list as $a)
-            <li>{{ $a->title }}</li>
-            @endforeach
-        </ul>
-
-    </div>
-
-    <div id="contents">
-        <h2>contents</h2>
-        {!! Form::open(['url' => 'memo']) !!}
-
-        {{ Form::label('title', null, ['class' => 'control-label']) }}
-        {{ Form::text('username') }}
-        {{ Form::label('body', null, ['class' => 'control-label']) }}
-        {{ Form::textarea('email', 'example@gmail.com') }}
-        {{ Form::submit('Click Me!') }}
-
-        {!! Form::close() !!}
-
-    </div>
-
-    <footer>
-        <h2>footer</h2>
-    </footer>
-
-</div>
-
-</body>
-</html>
+    {!! Form::close() !!}
+@endsection
