@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\MemoServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class MemoController extends Controller
 {
@@ -16,13 +17,19 @@ class MemoController extends Controller
 
     public function index()
     {
+        Log::info('--index--');
         $list = $this->memoService->getList();
         return view('memo.list', compact('list'));
     }
 
     public function regist(Request $request)
     {
-        $this->memoService->save($request);
+        Log::info('--regist--');
+        $result = $this->memoService->save($request);
+
+        if ( is_null($result['message']) === false) {
+            return redirect()->back()->withErrors($result['message'])->withInput();
+        }
         $list = $this->memoService->getList();
         return view('memo.list', compact('list'));
     }
