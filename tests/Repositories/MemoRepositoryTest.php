@@ -25,9 +25,17 @@ class MemoRepositoryTest extends TestCase
         $this->assertSame($result->memo, 'Esc連打');
     }
 
-    public function testCreate()
+    public function testCreateOK()
     {
         $data = array('title' => 'title', 'memo' => 'memo');
+        $result = $this->repo->create($data);
+
+        $this->assertSame($result, true);
+    }
+
+    public function testCreateOkWithEmptyValue()
+    {
+        $data = array('title' => '', 'memo' => '');
         $result = $this->repo->create($data);
 
         $this->assertSame($result, true);
