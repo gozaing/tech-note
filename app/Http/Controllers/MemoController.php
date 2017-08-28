@@ -22,6 +22,14 @@ class MemoController extends Controller
         return view('memo.list', compact('list'));
     }
 
+    public function edit($id)
+    {
+        Log::info('--edit--');
+        $memo = $this->memoService->get($id);
+        $list = $this->memoService->getList();
+        return view('memo.list', compact('list', 'memo'));
+    }
+
     public function regist(Request $request)
     {
         Log::info('--regist--');

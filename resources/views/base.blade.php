@@ -56,7 +56,7 @@
         <h2>sidenavi</h2>
         <ul>
             @foreach($list as $a)
-                <li><a href="{{ $a->id }}">{{ $a->title }}</a></li>
+                <li><a href="/memo/{{ $a->id }}">{{ $a->title }}</a></li>
             @endforeach
         </ul>
 

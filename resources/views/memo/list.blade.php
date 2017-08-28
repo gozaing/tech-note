@@ -14,9 +14,9 @@
     {!! Form::open(['url' => 'memo']) !!}
 
     {{ Form::label('title', null, ['class' => 'control-label']) }}
-    {{ Form::text('title', '') }}
+    {{ Form::text('title', (isset($memo)) ? $memo->title : '') }}
     {{ Form::label('memo', null, ['class' => 'control-label']) }}
-    {{ Form::textarea('memo', '') }}
+    {{ Form::textarea('memo', (isset($memo)) ? $memo->memo : '') }}
     {{ Form::submit('save') }}
 
     {!! Form::close() !!}

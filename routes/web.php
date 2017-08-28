@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/memo', 'MemoController@index');
+Route::get('/memo/{id}', 'MemoController@edit');
 Route::post('/memo', 'MemoController@regist');
 
 // 存在しないsample を叩いた場合は301を返してmemoへ
