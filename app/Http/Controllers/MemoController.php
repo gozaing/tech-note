@@ -38,8 +38,7 @@ class MemoController extends Controller
         if ( is_null($result['message']) === false) {
             return redirect()->back()->withErrors($result['message'])->withInput();
         }
-        $list = $this->memoService->getList();
-        return view('memo.list', compact('list'));
+        return redirect('/memo');
     }
 
 }
