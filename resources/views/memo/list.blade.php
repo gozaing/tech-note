@@ -1,6 +1,6 @@
 
 @extends('base')
-@section('title', 'sample test')
+@section('title', isset($memo) ? $memo->title : '')
 @section('content')
 @if (count($errors) > 0)
     <div class="">

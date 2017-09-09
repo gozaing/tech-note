@@ -49,11 +49,11 @@
 <div id="wrap">
 
     <header>
-        <h1>header</h1>
+        <h1>Tech-Memo</h1>
     </header>
 
     <div id="sidenavi">
-        <h2>sidenavi</h2>
+        {{--<h2></h2>--}}
         <ul>
             @foreach($list as $a)
                 <li><a href="/memo/{{ $a->id }}">{{ $a->title }}</a></li>
