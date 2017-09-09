@@ -23,7 +23,7 @@ interface MemoInterface
      * @param $data
      * @return mixed
      */
-    public function update($id, $data);
+    public function update($data);
 
     /**
      * 作成

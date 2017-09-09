@@ -8,7 +8,7 @@ interface MemoServiceInterface
 
     public function getList();
 
-    public function save($input, $id=null);
+    public function save($input);
 
     public function delete($id);
 

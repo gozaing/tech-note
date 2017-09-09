@@ -14,6 +14,8 @@
     <div>
     {!! Form::open(['url' => 'memo']) !!}
 
+        {{ Form::hidden('id', isset($memo) ? $memo->id : '') }}
+
         <div>
             {{ Form::label('title', null, ['class' => 'control-label']) }}
             {{ Form::text('title', (isset($memo)) ? $memo->title : '') }}

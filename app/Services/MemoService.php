@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Repositories\MemoInterface;
 use Illuminate\Validation\Factory as ValidateFactory;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Log;
 
 /**
  * Class MemoService
@@ -50,14 +51,14 @@ class MemoService implements MemoServiceInterface
         return $this->memoInterface->getList();
     }
 
-    /**
+   /**
      * @param $request
-     * @param $id
-     * @return $id
+     * @return array
      */
-    public function save($request, $id=null)
+    public function save($request)
     {
-        $input = $request->only(['title', 'memo']);
+        $input = $request->only(['id', 'title', 'memo']);
+
         $v = $this->validateFactory->make($input, $this->rules);
 
         $result = array('id' => null, 'message' => null);
@@ -67,10 +68,13 @@ class MemoService implements MemoServiceInterface
             return $result;
         }
 
-        if (is_null($id)) {
+
+        Log::debug($input['id']);
+
+        if (is_null($input['id'])) {
             $id = $this->memoInterface->create($input);
         } else {
-            $id = $this->memoInterface->update($id, $input);
+            $id = $this->memoInterface->update($input);
         }
 
         $result['id'] = $id;
