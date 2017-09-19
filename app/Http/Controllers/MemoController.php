@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Services\MemoServiceInterface;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+//use Illuminate\Support\Facades\Log;
 
 class MemoController extends Controller
 {
@@ -17,14 +17,12 @@ class MemoController extends Controller
 
     public function index()
     {
-        Log::info('--index--');
         $list = $this->memoService->getList();
         return view('memo.list', compact('list'));
     }
 
     public function edit($id)
     {
-        Log::info('--edit--');
         $memo = $this->memoService->get($id);
         $list = $this->memoService->getList();
         return view('memo.list', compact('list', 'memo'));
@@ -32,7 +30,6 @@ class MemoController extends Controller
 
     public function regist(Request $request)
     {
-        Log::info('--regist--');
         $result = $this->memoService->save($request);
 
         if ( is_null($result['message']) === false) {

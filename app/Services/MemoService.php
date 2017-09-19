@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Repositories\MemoInterface;
 use Illuminate\Validation\Factory as ValidateFactory;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Support\Facades\Log;
+//use Illuminate\Support\Facades\Log;
 
 /**
  * Class MemoService
@@ -68,8 +68,6 @@ class MemoService implements MemoServiceInterface
             return $result;
         }
 
-
-        Log::debug($input['id']);
 
         if (is_null($input['id'])) {
             $id = $this->memoInterface->create($input);
