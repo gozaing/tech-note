@@ -10,11 +10,8 @@ class MemoControllerTest extends TestCase
 {
     public function testMemoIndex()
     {
-        $response = $this->get('/sample');
-
-        $response->assertStatus(301);
-
-        $response->assertSee('<meta http-equiv="refresh" content="0;url=http://localhost/memo" />');
+        $response = $this->get('/memo');
+        $response->assertStatus(200);
 
     }
 }
