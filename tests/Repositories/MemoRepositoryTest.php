@@ -3,12 +3,14 @@
 namespace Tests\Repositories;
 
 use App\Repositories\MemoInterface;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class MemoRepositoryTest extends TestCase
 {
-    use DatabaseTransactions;
+//    use DatabaseTransactions;
+    use DatabaseMigrations;
 
     protected $repo;
 
@@ -20,9 +22,11 @@ class MemoRepositoryTest extends TestCase
 
     public function testGet()
     {
+       factory(\App\Memo::class, 'first')->create();
+
         $result = $this->repo->get(1);
-        $this->assertSame($result->title, 'Vim');
-        $this->assertSame($result->memo, 'Esc連打');
+        $this->assertSame($result->title, 'Emacs');
+        $this->assertSame($result->memo, '終了出来ない');
     }
 
     public function testCreateOK()

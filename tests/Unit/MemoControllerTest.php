@@ -10,6 +10,8 @@ use \Mockery as m;
 class MemoControllerTest extends TestCase
 {
 
+    use DatabaseMigrations;
+
     public function tearDown()
     {
         m::close();

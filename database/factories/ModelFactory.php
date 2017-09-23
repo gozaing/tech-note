@@ -22,3 +22,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+
+$factory->defineAs(App\Memo::class, 'first', function (Faker\Generator $faker) {
+    return [
+        'id' => null,
+        'title' => 'Emacs',
+        'memo' => '終了出来ない',
+        'created_at' => "2017-09-24 01:01:01",
+    ];
+});
